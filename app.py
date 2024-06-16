@@ -1,13 +1,13 @@
 import gradio as gr
 import time
-from ctransformers import AutoModelForCasuallLM
+from ctransformers import AutoModelForCausalLM
 
 def load_llm():
-    llm = AutoModelForCasuallLM.from_pretrained(
+    llm = AutoModelForCausalLM.from_pretrained(
         'codellama-13b-instruct.Q4_K_M.gguf',
         model_type = 'llama',
         max_new_tokens = 1096,
-        repetation_penalty = 1.13,
+        repetition_penalty = 1.13,
         temperature = 0.1,
     )
     return llm
